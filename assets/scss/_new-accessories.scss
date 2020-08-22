@@ -1,0 +1,34 @@
+
+/*  new accessories template   */
+#new-accessories .owl-carousel .item .product a {
+    overflow: hidden;
+}
+#new-accessories .owl-carousel .item .product img {
+    transition: transform 0.5s ease;
+}
+#new-accessories .owl-carousel .item .product img:hover {
+    transform: scale(1.1);
+}
+#new-accessories .owl-carousel .owl-nav button {
+    position: absolute;
+    top: 30%;
+    outline: none;
+}
+#new-accessories .owl-carousel .owl-nav button.owl-prev {
+    left: 0;
+}
+#new-accessories .owl-carousel .owl-nav button.owl-prev span,
+#new-accessories .owl-carousel .owl-nav button.owl-next span {
+    font-size: 35px;
+    color: #003859;
+    padding: 0 1rem;
+}
+#new-accessories .owl-carousel .owl-nav button.owl-prev span {
+    margin-left: -4rem;
+}
+#new-accessories .owl-carousel .owl-nav button.owl-next {
+    right: 0;
+}
+#new-accessories .owl-carousel .owl-nav button.owl-next span {
+    margin-right: -4rem;
+}

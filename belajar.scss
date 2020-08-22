@@ -1,0 +1,202 @@
+// Symbol ampersand (&) berfungsi untuk menyambungkan parent dan child
+// Symbol > adalah direct khusus ke child tertentu dan tidak mempengaruhi child yg lain
+// Symbol + will not affect inside the parent, but affect first selector after the parent done
+// Symbol ~ will not affect inside the parent, but affect all selectors after the parent done
+// Symbol (^=) means begin with, e.g. a[href^="https"], select element a with href value begin with https
+// Symbol ($=) means end with, e.g. a[href$=".pdf"], select element a with href value ends with .pdf
+// Symbol (*=) means contain with substrin, e.g. a[href*="hi"], select element a with href contain substring hi
+// Symbol (~=) means contain word, e.g. [title~=flower], select all element with title containing word flower
+
+
+
+
+// ALL PSEUDO CLASSES, ONLY 1 COLON = :
+// e.g. = :active, :checked, :disabled, :focus, :hover
+// link : https://www.w3schools.com/Css/css_pseudo_classes.asp
+// 
+// ALL PSEUDO ELEMENTS, WITH 2 COLONS = ::
+// e.g. = ::after, ::before, ::first-letter, ::first-line, ::selection
+// link : https://www.w3schools.com/Css/css_pseudo_elements.asp
+
+
+
+// CSS Pseudo-classes -------------------------
+/* unvisited link */
+//   a:link {
+//     color: red;
+//   }
+  
+//   /* visited link */
+//   a:visited {
+//     color: green;
+//   }
+  
+//   /* mouse over link */
+//   a:hover {
+//     color: hotpink;
+//   }
+  
+//   /* selected link */
+//   a:active {
+//     color: blue;
+//   }
+
+// Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective! a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive.
+// -------------------------------------------------------------------
+
+
+// showing p or other child element like a tooltip when hovering the parent--------------------------
+//   p {
+//     display: none;
+//     background-color: yellow;
+//     padding: 20px;
+//   }
+//   div:hover p {
+//     display: block;
+//   }
+// // in html should be :
+// <div>Hover over me to show the p element
+//   <p>Tada! Here I am!</p>
+// </div>
+// -------------------------------------------------------------------
+
+
+// pseudo that affect only the first child--------------------------
+//   p:first-child {
+//     color: blue;
+//   } 
+//   </style>
+//   </head>
+//   <body>
+// // in html should be :
+//   <p>This is some text.</p>
+//   <p>This is some text.</p>
+//   <p><b>Note:</b> For :first-child to work in IE8 and earlier, a DOCTYPE must be declared.</p>
+// -------------------------------------------------------------------
+
+// The :lang Pseudo-class--------------------------
+// The :lang pseudo-class allows you to define special rules for different languages.
+// 
+//   q:lang(no) {
+//     quotes: "~" "~";  // means, open with (~), and close with (~)
+//   }
+// // in html should be :
+// <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+// <p>In this example, :lang defines the quotation marks for q elements with lang="no":</p>
+// <p><b>Note:</b> IE8 supports the :lang pseudo class only if a !DOCTYPE is specified.</p>
+// -------------------------------------------------------------------
+
+
+// The ::first-line Pseudo-element--------------------------
+// The ::first-line pseudo-element is used to add a special style to the first line of a text.
+// p::first-line {
+//     color: #ff0000;
+//     font-variant: small-caps;
+//   }
+// // in html should be :
+// <p>You can use the ::first-line pseudo-element to add a special effect to the first line of a text. Some more text. And even more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more, and more.</p>
+// -------------------------------------------------------------------
+
+
+// The ::after and ::before Pseudo-element--------------------------
+// The ::after pseudo-element can be used to insert some content after the content of an element.
+// The ::before pseudo-element can be used to insert some content before the content of an element.
+// h1::after {
+//     content: url(smiley.gif);
+//   }
+// h1::before {
+//     content: url(smiley.gif);
+//   }
+// // in html should be :
+// <h1>This is a heading</h1>
+// <p>The ::after pseudo-element inserts content after the content of an element.</p>
+// <h1>This is a heading</h1>
+// <p>The ::before pseudo-element inserts content before the content of an element.</p>
+// -------------------------------------------------------------------
+
+
+// The ::selection Pseudo-element--------------------------
+// The ::selection pseudo-element matches the portion of an element that is selected by a user.
+// ::selection {
+//     color: red;
+//     background: yellow;
+//   }
+// // in html should be :
+// <p>This is a paragraph.</p>
+// <div>This is some text in a div element.</div>
+// -------------------------------------------------------------------
+
+
+// Menggunakan resize
+// The resize property specifies if (and how) an element should be resizable by the user.
+// div {
+//     border: 2px solid;
+//     resize: both;  // resize both vertical and horizontal
+//     overflow: auto;
+//   }
+
+//   div {
+//     border: 2px solid;
+//     resize: vertical;
+//     overflow: auto;
+//   }
+
+//   div {
+//     border: 2px solid;
+//     resize: horizontal;
+//     overflow: auto;
+//   }
+
+//   textarea#test {
+//     resize: none;  // disable resize for textarea, by default textarea come with resize ability
+//  }
+// -------------------------------------------------------------------
+
+
+// menggunakan outline dan outline-offset-------------------------------------------------------------------
+// The outline-offset property adds space between an outline and the edge or border of an element.
+// div.ex2 {
+//     margin: 10px;
+//     border: 1px solid black;
+//     outline: 5px dashed blue;
+//     outline-offset: 5px;
+//   } 
+// -------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+// Property         Example             //? Description     
+// --------------------------------------------------------------------------------------
+// resize           resize: horizontal; //? Specifies whether or not an element is resizable by the user
+// outline          outline: 5px dashed blue; //? Add an outline and the edge or border of an element
+// outline-offset   outline-offset: 15px; //? Adds space between an outline and the edge or border of an element
+// visibility       visibility: (visible|hidden); //? Hide or show an element
+
+
+
+// @at-root allows you to break out of your nesting structure entirely to the “root” of your nesting tree
+//   .grand-parent {
+//     .parent {
+//       @at-root .child {color: #fff;}
+//     }
+//   }
+
+// double the .parent
+//   .parent {
+//     &#{&} { color: #fff;}
+//   }
+
+// combined with the selector
+//   .btnx {
+//     &-primary {color: #fff;}
+//     &-secondary {color: #000;}
+//   }
+
